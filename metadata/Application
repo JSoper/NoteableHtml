@@ -1,0 +1,26 @@
+{
+    "type": "application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "TopicRecord"
+        ],
+        "stores": [
+            "TopicStore"
+        ],
+        "views": [
+            "mainView"
+        ],
+        "autoCreateViewport": true,
+        "name": "MyApp",
+        "controllers": [
+            "NoteableController"
+        ]
+    },
+    "id": "ExtBox1-ext-gen2224",
+    "designerId": "application"
+}

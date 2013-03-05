@@ -1,0 +1,78 @@
+{
+    "name": "Noteable",
+    "settings": {
+        "urlPrefix": "",
+        "spacesToIndent": 4,
+        "exportPath": "",
+        "sdkPath": "",
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false
+    },
+    "xdsVersion": "2.1.0",
+    "xdsBuild": 676,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000498,
+    "framework": "ext41",
+    "topInstanceFileMap": {
+        "43e2c04a-75d0-4799-b6b0-bb62b5377535": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        },
+        "d64c6209-5be3-4060-aba4-b93fb3fc811c": {
+            "paths": [
+                "metadata/view/mainView",
+                "app/view/override/mainView.js",
+                "app/view/mainView.js",
+                "app/view/Viewport.js"
+            ],
+            "className": "mainView"
+        },
+        "5d88f366-2b13-4539-be1e-83aad276d553": {
+            "paths": [
+                "metadata/store/TopicStore",
+                "app/store/override/TopicStore.js",
+                "app/store/TopicStore.js"
+            ],
+            "className": "TopicStore"
+        },
+        "13735e94-c0d1-47f2-8465-6087a5fecced": {
+            "paths": [
+                "metadata/model/TopicRecord",
+                "app/model/override/TopicRecord.js",
+                "app/model/TopicRecord.js"
+            ],
+            "className": "TopicRecord"
+        },
+        "4fd0feb2-8403-4cb0-85a3-c93c12011481": {
+            "paths": [
+                "metadata/controller/NoteableController",
+                "app/controller/override/NoteableController.js",
+                "app/controller/NoteableController.js"
+            ],
+            "className": "NoteableController"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "d64c6209-5be3-4060-aba4-b93fb3fc811c"
+        ],
+        "store": [
+            "5d88f366-2b13-4539-be1e-83aad276d553"
+        ],
+        "controller": [
+            "4fd0feb2-8403-4cb0-85a3-c93c12011481"
+        ],
+        "model": [
+            "13735e94-c0d1-47f2-8465-6087a5fecced"
+        ],
+        "resource": [
+            "43e2c04a-75d0-4799-b6b0-bb62b5377535"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

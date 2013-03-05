@@ -1,0 +1,201 @@
+{
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "NoteableController"
+    },
+    "id": "ExtBox1-ext-gen15832",
+    "designerId": "4fd0feb2-8403-4cb0-85a3-c93c12011481",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "ref",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onPlusToolClick",
+                "fn": "onPlusToolClick",
+                "implHandler": [
+                    "console.log( 'onToolClick+', tool.type );\r",
+                    "var topic = prompt( 'Topic Name?' );\r",
+                    "if ( topic ) {\r",
+                    "    var record = Ext.create('MyApp.model.TopicRecord', \r",
+                    "    {topic: topic, content:''});\r",
+                    "    var store = Ext.getStore('TopicStore');\r",
+                    "    store.add( record ) ;\r",
+                    "    var basicForm = this.getMainForm().getForm(); // reference\r",
+                    "    basicForm.loadRecord( record );\r",
+                    "    console.log( 'onToolClick+ id=', record.id );\r",
+                    "    // console.log( 'onToolClick', record );\r",
+                    "    console.log( 'onToolClick+ topic=', record.get('topic') );\r",
+                    "    var grid = Ext.ComponentQuery.query('grid')[0];\r",
+                    "    // console.log( 'onToolClick grid=', grid );\r",
+                    "    grid.selModel.select(record);\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Tool",
+                "designer|controlQuery": "tool[type=plus]"
+            },
+            "designerId": "283a065d-8429-4d87-b53c-37aa01b4cd3f"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onMinusToolClick",
+                "fn": "onMinusToolClick",
+                "implHandler": [
+                    "console.log( \"onToolClick-\", tool.type );\r",
+                    "var basicForm = this.getMainForm().getForm();\r",
+                    "var record = basicForm.getRecord();\r",
+                    "var store = Ext.getStore('TopicStore');\r",
+                    "store.remove(record);"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Tool",
+                "designer|controlQuery": "tool[type=minus]"
+            },
+            "designerId": "11c63457-bf2d-4718-9185-288a0ab9e0d2"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onSaveToolClick",
+                "fn": "onSaveToolClick",
+                "implHandler": [
+                    "console.log( \"onToolClick\", tool.type );\r",
+                    "var store = Ext.getStore('TopicStore');\r",
+                    "store.sync();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Tool",
+                "designer|controlQuery": "tool[type=save]"
+            },
+            "designerId": "46284b10-c90d-4e65-beb2-aa16852dde9c"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "mainForm",
+                "ref": "mainForm",
+                "selector": "form"
+            },
+            "designerId": "306820f3-deb8-4133-807d-51264b8d8317"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onHtmleditorChange",
+                "fn": "onHtmleditorChange",
+                "implHandler": [
+                    "console.log('changeHtml', 'newValue=' + newValue, 'oldValue=' + oldValue );\r",
+                    "var basicForm = this.getMainForm().getForm();\r",
+                    "var record = basicForm.getRecord();\r",
+                    "\r",
+                    "console.log( 'changeHtml b4 record.set() topic=', record.get('topic') );\r",
+                    "console.log( 'changeHtml b4 record.set() content=', record.get('content') );\r",
+                    "//basicForm.updateRecord(record);\r",
+                    "record.set(field.name, newValue);\r",
+                    "console.log( 'changeHtml aftr record.set() topic=', record.get('topic') );\r",
+                    "console.log( 'changeHtml aftr record.set() content=', record.get('content') );"
+                ],
+                "name": "change",
+                "scope": "me",
+                "designer|targetType": "Ext.form.field.HtmlEditor",
+                "designer|controlQuery": "htmleditor"
+            },
+            "designerId": "2535521b-927e-4a1e-a636-5f3d1590c3fc"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onGridpanelSelect",
+                "fn": "onGridpanelSelect",
+                "implHandler": [
+                    "var basicForm = this.getMainForm().getForm(); // reference\r",
+                    "console.log( '\\nselect b4 loadRecord topic=', record.get('topic') );\r",
+                    "console.log( 'select b4 loadRecord content=', record.get('content') );\r",
+                    "basicForm.loadRecord( record );\r",
+                    "console.log( 'select aftr loadRecord topic=', record.get('topic') );\r",
+                    "console.log( 'select aftr loadRecord content=', record.get('content') );"
+                ],
+                "name": "select",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "gridpanel"
+            },
+            "designerId": "01236da8-fcaf-4493-9db5-2f5aafe042a8"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onTextfieldChange",
+                "fn": "onTextfieldChange",
+                "implHandler": [
+                    "console.log('change textfield', 'newvalue=' + newValue,'oldValue=' + oldValue );\r",
+                    "if ( newValue )\r",
+                    "{  var basicForm = this.getMainForm().getForm();\r",
+                    "    var record = basicForm.getRecord();\r",
+                    "    console.log( 'change textfield b4 record.set() topic=', record.get('topic') );\r",
+                    "    console.log( 'change textfield b4 record.set() content=', record.get('content') );\r",
+                    "   // form.updateRecord(record); // screws up with selection of new record\r",
+                    "    record.set(field.name, newValue);\r",
+                    "    console.log( 'change textfield aftr record.set() topic=', record.get('topic') );\r",
+                    "    console.log( 'change textfield aftr record.set() content=', record.get('content') );\r",
+                    "}"
+                ],
+                "name": "change",
+                "scope": "me",
+                "designer|targetType": "Ext.form.field.Text",
+                "designer|controlQuery": "textfield"
+            },
+            "designerId": "b3fc6710-695c-4385-83b7-46a3602e7fbf"
+        }
+    ]
+}
