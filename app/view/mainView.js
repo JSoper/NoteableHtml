@@ -8,7 +8,6 @@ Ext.define('MyApp.view.mainView', {
 
 	initComponent : function() {
 		var me = this;
-
 		Ext.applyIf(me, {
 			items : [ {
 				xtype : 'gridpanel',
@@ -17,13 +16,14 @@ Ext.define('MyApp.view.mainView', {
 				title : 'Noteable',
 				store : 'TopicStore',
 				plugins : [ Ext.create('Ext.grid.plugin.CellEditing', {
-					clicksToEdit : 1
+					clicksToEdit : 2
 				}) ],
 				columns : [ {
 					xtype : 'gridcolumn',
 					dataIndex : 'topic',
 					flex : 1,
-					text : 'Topic'
+					text : 'Topics',
+					editor : 'textfield'
 				} ],
 				tools : [ {
 					xtype : 'tool',
@@ -41,15 +41,12 @@ Ext.define('MyApp.view.mainView', {
 				title : 'My Form',
 				flex : 4,
 				layout : 'fit',
-				items : [
-				{
+				items : [ {
 					xtype : 'htmleditor',
 					name : 'content'
 				} ]
 			} ]
 		});
-
 		me.callParent(arguments);
 	}
-
 });
