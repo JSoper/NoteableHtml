@@ -43,8 +43,8 @@ Ext.define('MyApp.controller.NoteableController', {
 
 	onHtmleditorChange : function(field, newValue, oldValue, options) {
 		console.log('changeHtml', 'newValue=' + newValue, 'oldValue=' + oldValue);
-		var basicForm = this.fetchBasicForm()
-		var record = fetchCurrentRecord(), //basicForm.getRecord();
+		var basicForm = this.fetchBasicForm();
+		var record = this.fetchCurrentRecord(); //basicForm.getRecord();
 
 		// console.log('changeHtml b4 record.set() topic=',
 		// record.get('topic'));
