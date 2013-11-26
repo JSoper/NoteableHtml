@@ -1,5 +1,11 @@
 Ext.define('MyApp.view.mainView', {
 	extend : 'Ext.container.Container',
+	
+	requires: [ 'Ext.layout.container.Border', 
+	            'Ext.grid.Panel', 
+	            'Ext.form.Panel',
+	            'Ext.grid.plugin.CellEditing'
+	            ],
 
 	height : 300,
 	layout : {

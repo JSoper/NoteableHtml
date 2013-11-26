@@ -3,7 +3,6 @@ Ext.Loader.setConfig({
 });
 
 Ext.application({
-	models : [ 'TopicRecord' ],
 	stores : [ 'TopicStore' ],
 	views : [ 'mainView' ],
 	autoCreateViewport : true,
